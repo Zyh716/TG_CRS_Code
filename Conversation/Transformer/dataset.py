@@ -10,10 +10,7 @@ from copy import deepcopy
 import nltk
 import jieba
 import pickle
-'''
-# bpe2index = {'<pad>': 0, '<unk>': 1, '<go>': 2, '<end>': 3, '<movie>': 4, _split_: 5}
-原版： pad/go/end/unk------split
-'''
+
 
 
 class dataset(object):

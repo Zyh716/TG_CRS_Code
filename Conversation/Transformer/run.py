@@ -445,8 +445,6 @@ class TrainLoop_Transformer():
         return output_dict_gen
 
     def save_embedding(self):
-        print('[Saving weight in {}]'.format('data/tf_bpe2vec.npy'))
-        np.save('output/tf_bpe2vec.npy', np.array(self.model.embeddings.weight.data.cpu()))
         json.dump(loop.dict, open('output/tf_bpe2index.json', 'w'))
 
     def vector2sentence(self, batch_sen):
