@@ -1,11 +1,9 @@
-## TG-CRS
+# Codes for TG-ReDial
+We now publish the codes and the learned parameters of all models (baselines and ours) in our paper [***Towards Topic-Guided Conversational Recommender System***](https://arxiv.org/abs/2010.04125), to appear in *International Conference on Computational Linguistics*, 2020 (COLING2020).
 
-[Towards Topic-Guided Conversational Recommender System ](https://github.com/RUCAIBox/TG-ReDial).
-Kun Zhou, Yuanhang Zhou, Wayne Xin Zhao, Xiaoke Wang and Ji-Rong Wen.
-To appear in *International Conference on Computational Linguistics*, 2020
+Our dataset has been published in [**TG-ReDial**](https://github.com/RUCAIBox/TG-ReDial), which contains the description and dataset of our TG-ReDial.
 
-[ARXIV](https://arxiv.org/abs/2010.04125)
-
+Thanks to Yuanhang's hard work, in this project, you can implement the models in our paper by simple scripts. So ***please do not save your star :)***
 
 
 ## Environment
@@ -23,32 +21,25 @@ torch==1.6.0
 pip install -r requirements.txt
 ```
 
+### Get data
 
+   This project only contains the code of TG-ReDial. You can get original data from [GoogleDrive](https://drive.google.com/drive/folders/1jLkNtUgzqBITQJsbOjSq20S2zzpY5Foj?usp=sharing) or [BaiduNetDisk](https://pan.baidu.com/s/1fthFPz8Qjt54m4NR2G9AIA), the password for baidunetdisk is cc2o. 
 
-### Dataset
-
-[TG-ReDial](https://github.com/RUCAIBox/TG-ReDial)
-
-
-
-### How to use the code
-
-0. Get data
-
-   This repository only contains the code of TG-ReDial, and don't contain any data . You can get original data in this [repository](https://github.com/RUCAIBox/TG-ReDial). 
-
-   To make the code more convenient, we have preprocessed all the data and prepared all trained model parameters, you can get them from [GoogleDrive](https://drive.google.com/drive/folders/14MBg4UfWwWL2nuTJtOmVL0QP9-zw_4hJ?usp=sharing). You can download them and use our script to place them in correct location,  then you can directly test the model or retrain the model.  
-
-   First, placed the *data_move.tar.gz* in ./TG_CRS_Code/
+   For the convenience of implementing these models, we have preprocessed all the data and prepared all trained model parameters, you can get them from [GoogleDrive](https://drive.google.com/drive/folders/14MBg4UfWwWL2nuTJtOmVL0QP9-zw_4hJ?usp=sharing). You should download them and place them in proper path, then use our script to test or retrain the model.
+   
+   First, placed the *data_move.tar.gz* in *./TG_CRS_Code/*
    Then, run the following code
-    ```
-      tar zxvf data_move.tar.gz
-      bash data_move/move_data_back.sh
-    ```
 
-1. Recommender
+    
+    tar zxvf data_move.tar.gz
+    bash data_move/move_data_back.sh
+    
 
-    1.1 Ours
+### Recommender Module
+
+<img src="./table1.png" width=400 height=180 />
+
+    1. Ours
     
     ```
     cd Recommender/Union
@@ -57,7 +48,7 @@ pip install -r requirements.txt
     # testing
     bash script/test_Ours.sh
     ```
-    1.2 BERT
+    2. BERT
     
     ```
     cd Recommender/Union
@@ -66,7 +57,7 @@ pip install -r requirements.txt
     # testing
     bash script/test_BERT.sh
     ```
-    1.3 TextCNN
+    3. TextCNN
     ```
     cd Recommender/TextCNN
     # training
@@ -74,7 +65,7 @@ pip install -r requirements.txt
     # testing
     bash script/test.sh
     ```
-    1.4 SASRec
+    4. SASRec
     ```
     cd Recommender/Union
     # training
@@ -82,7 +73,7 @@ pip install -r requirements.txt
     # testing
     bash script/test_SASRec.sh
     ```
-    1.5 GRU4Rec
+    5. GRU4Rec
     ```
     cd Recommender/GRU4Rec
     # training
@@ -90,19 +81,21 @@ pip install -r requirements.txt
     # testing
     bash script/test.sh
     ```
-    1.6 KBRD
+    6. KBRD
     ```
     cd Conversation/KBRD 
     bash scripts/both.sh <num_exps> <gpu_id>
     ```
-    1.7 ReDial
+    7. ReDial
     ```
     cd Conversation/KBRD 
     bash scripts/baseline.sh <num_exps> <gpu_id>
     ```
-2. Response Generation
+### Response Generation Module
 
-	2.1 Ours
+<img src="./table3.png" width=800 height=180 />
+
+	1. Ours
    
     ```
     cd Conversation/Union
@@ -129,7 +122,7 @@ pip install -r requirements.txt
     # eval generation
     bash script/Ours/test_gene_metric.sh generation/v11051_gen_output.txt
     ```
-    2.2 GPT2
+    2. GPT2
     ```
     cd Conversation/Union
     # prepare for data, note we have prepared, so you can skip this step
@@ -143,7 +136,7 @@ pip install -r requirements.txt
     # eval generation
     bash script/GPT2/test_gene_metric.sh generation/v1116_gpt2_gen_output.txt
     ```
-    2.3 Transformer
+    3. Transformer
     ```
     cd Recommender/Transformer
     # training
@@ -153,7 +146,7 @@ pip install -r requirements.txt
 	# eval generation
 	bash script/test_gene_metric.sh output/output_test_both_epoch_-1.txt
 	 ```
-	 2.4 KBRD
+	 4. KBRD
 	 ```
     cd Recommender/KBRD
     # training and testing ppl
@@ -161,7 +154,9 @@ pip install -r requirements.txt
     # generating and eval generation
     bash myscript/generate.sh 
 	 ```
-3. Topic prediction
+### Topic prediction Module
+
+<img src="./table2.png" width=400 height=220 />
 
    ```
    cd TopicGuiding/Model_You_Want
