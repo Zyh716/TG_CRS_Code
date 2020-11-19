@@ -37,7 +37,14 @@ pip install -r requirements.txt
 
    This repository only contains the code of TG-ReDial, and don't contain any data . You can get original data in this [repository](https://github.com/RUCAIBox/TG-ReDial). 
 
-   To make the code more convenient, we have preprocessed all the data and prepared all trained model parameters, you can get them from [Google Drive](). You can download them and use our script to place them in correct location,  then you can directly test the model or retrain the model.  
+   To make the code more convenient, we have preprocessed all the data and prepared all trained model parameters, you can get them from [GoogleDrive](https://drive.google.com/drive/folders/14MBg4UfWwWL2nuTJtOmVL0QP9-zw_4hJ?usp=sharing). You can download them and use our script to place them in correct location,  then you can directly test the model or retrain the model.  
+
+   First, placed the *data_move.tar.gz* in ./TG_CRS_Code/
+   Then, run the following code
+    ```
+      tar zxvf data_move.tar.gz
+      bash data_move/move_data_back.sh
+    ```
 
 1. Recommender
 
