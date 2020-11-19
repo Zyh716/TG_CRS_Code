@@ -1,0 +1,1 @@
+There is a bug: args.use_cuda is True whatever we set, and the params will be always load in cuda:2

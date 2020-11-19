@@ -1,0 +1,1 @@
+python data/data_GPT2/get_train.py

@@ -1,0 +1,1 @@
+python data/data_Ours/get_train.py
