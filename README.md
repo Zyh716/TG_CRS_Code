@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
    For the convenience of implementing these models, we have preprocessed all the data and prepared all trained model parameters, you can get them from [Google Drive](). You should download them and place them in proper path, then use our script to test or retrain the model.
 
-#### Recommender
+### Recommender Module
 
 <img src="./table1.png" width=400 height=180 />
 
@@ -83,7 +83,7 @@ pip install -r requirements.txt
     cd Conversation/KBRD 
     bash scripts/baseline.sh <num_exps> <gpu_id>
     ```
-#### Response Generation
+### Response Generation Module
 
 <img src="./table3.png" width=800 height=180 />
 
@@ -146,9 +146,10 @@ pip install -r requirements.txt
     # generating and eval generation
     bash myscript/generate.sh 
 	 ```
-#### Topic prediction
+### Topic prediction Module
 
 <img src="./table2.png" width=400 height=220 />
+
    ```
    cd TopicGuiding/Model_You_Want
    # training
