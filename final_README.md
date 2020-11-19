@@ -102,14 +102,14 @@ pip install -r requirements.txt
     # Prepare the predicted data, note that we have prepared, so you can skip this step
     #	To run ours Response Generation Model, we need to use movie predicted by 
     # ours recommender model and topic predicted by ours topic prediction model. 
-    # After train the latter two models, you can use this command to get the 
+    # After training the latter two models, you can use them command to get the 
     # predicted consequence
     bash ../../TopicGuiding/Ours/script/test.sh <gpu_id>
     cp ../../TopicGuiding/Ours/data/identity2topicId.json data/data_Ours
     bash ../../Recommender/Union/script/gen_pred_mids.sh
     cp ../../Recommender/Union/data/data_p_Ours/identity2movieId.json data/data_Ours
     
-    # prepare for data, note that we have prepared, so you can skip this step
+    # prepare the data, note that we have prepared, so you can skip this step
     bash script/Ours/prepare_data.sh
     
     # training
