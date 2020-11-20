@@ -3,7 +3,7 @@ We now publish the codes and the learned parameters of all models (baselines and
 
 Our dataset has been published in [**TG-ReDial**](https://github.com/RUCAIBox/TG-ReDial), which contains the description and dataset of our TG-ReDial.
 
-Thanks to Yuanhang's hard work, in this project, you can implement the models in our paper by simple scripts. So ***please do not save your star :)***
+In this project, you can implement the models in our paper by simple scripts. So ***please do not save your star :)***
 
 
 ## Environment
